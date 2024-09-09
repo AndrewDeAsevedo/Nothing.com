@@ -1,0 +1,24 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./pocketbase-backend
+      dockerfile: Dockerfile
+    container_name: pocketbase-backend
+    volumes:
+      - ./pocketbase-backend:/pb/pb_data
+    ports:
+      - "8090:8090"
+    command: ["/pb/pocketbase", "serve", "--http=0.0.0.0:8090"]
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./src/Dockerfile
+    container_name: sveltekit-app
+    ports:
+      - "3000:3000"
+
+
+volumes:
+  pb_data:
