@@ -1,10 +1,10 @@
 <script>
-  import Header from '../../components/Header.svelte';
   import { onMount } from 'svelte';
+  import Header from '../../components/Header.svelte';
+  import Loader from '../../components/Loader.svelte';
   import CreatePost from '../../components/dashboard/CreatePost.svelte';
   import PostList from '../../components/dashboard/PostList.svelte';
   import pb from '../../lib/pocketbase.js';
-  import Loader from '../../components/Loader.svelte';
 
   let posts = [];
   let loading = true;
@@ -32,7 +32,7 @@
 
 <Header />
 
-<main class="container mx-auto mt-10">
+<main>
   {#if loading}
     <Loader />
   {:else}
