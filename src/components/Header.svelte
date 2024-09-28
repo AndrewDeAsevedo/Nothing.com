@@ -2,7 +2,7 @@
     import { goto } from '$app/navigation';
     import Sidebar from './Sidebar.svelte';
     let showSidebar = false;
-    export let headerType = 'loggedOut';
+    export let isLoggedIn = true;
     const toggleSidebar = () => {
     showSidebar = !showSidebar;
   };
@@ -20,11 +20,11 @@
                 <a href="#About" class="duration-200 hover:text-indigo-400 cursor-pointer">About The Developers</a>
                 <a href="#Reviews" class="duration-200 hover:text-indigo-400 cursor-pointer">Reviews</a>
                 <a href="#FAQs" class="duration-200 hover:text-indigo-400 cursor-pointer">FAQs</a>
-                {#if headerType==='loggedIn'}
+                {#if isLoggedIn}
                     <button on:click={() => goto('/login')} class="logInButton mx-auto duration-200cursor-pointer">
                         <p>Log Out</p>
                     </button>
-                {:else if headerType==='loggedOut'}
+                {:else if !isLoggedIn}
                     <button on:click={() => goto('/login')} class="logInButton mx-auto duration-200cursor-pointer">
                         <p>Log In</p>
                     </button>
@@ -33,4 +33,4 @@
 
 </header>
 
-<Sidebar {showSidebar} headerType={headerType}/>
+<Sidebar {showSidebar} isLoggedIn={isLoggedIn}/>

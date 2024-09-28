@@ -1,7 +1,7 @@
 <script>
     import { goto } from '$app/navigation';
     export let showSidebar = false;
-    export let headerType = headerType;
+    export let isLoggedIn;
 </script>
   
 <div
@@ -12,11 +12,11 @@
       <a href="#about">About The Developers</a>
       <a href="#reviews">Reviews</a>
       <button><a href="#FAQs">FAQs</a></button>
-      {#if headerType==='loggedIn'}
+      {#if isLoggedIn}
         <button on:click={() => goto('/login')} class="logInButton mx-auto duration-200cursor-pointer">
             <p>Log Out</p>
         </button>
-      {:else if headerType==='loggedOut'}
+      {:else if !isLoggedIn}
         <button on:click={() => goto('/login')} class="logInButton mx-auto duration-200cursor-pointer">
           <p>Log In</p>
         </button>
