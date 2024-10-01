@@ -36,10 +36,10 @@
 
 <Header type='login'/>
 
-<div class="border-4 mt-36 ml-4 mr-4 pb-8 border-blue-400">
+<div class="border-4 mt-36 ml-4 mr-4 pb-10 border-blue-400 md:mx-56">
   <div class= 'Welcome message mt-5'>
     <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl macx-w-[1200px] mx-auto w-full text-center font-semibold">
-     <span class="text-indigo-400 font-sans">Welcome Back!</span>
+     <span class="text-blue-400 font-sans">Welcome Back!</span>
     </h2>
     <p class="text-xl sm:text-2xl md:text-3xl text-center max-w-[1000px] mx-auto w-full">
       Log into your account below
