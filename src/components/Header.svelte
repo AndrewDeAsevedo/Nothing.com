@@ -11,7 +11,7 @@
 <header class="flex flex-col relative z-5">
     <div class="max-w-[1400px] mx-auto w-full flex items-center justify-between p-4 py-6">
         <a href="/">
-            <h1 class="text-indigo-400 font-bold text-3xl z-5">Nothing<span class="text-blue-400">.com</span></h1>
+            <h1 class="text-indigo-400 font-bold text-3xl z-5">Olley<span class="text-blue-400">.com</span></h1>
         </a>
         <button on:click={toggleSidebar} class="md:hidden grid place-items-center">
             <i class="fa-solid fa-bars"></i>
