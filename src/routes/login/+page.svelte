@@ -36,13 +36,14 @@
 
 <Header type='login'/>
 
-<div class= 'Welcome message'>
-  <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl macx-w-[1200px] mx-auto w-full text-center font-semibold mt-36">
-    Welcome Back! <span class="text-indigo-400 font-sans"></span>
-  </h2>
-  <p class="text-xl sm:text-2xl md:text-3xl text-center max-w-[1000px] mx-auto w-full">
-    Log into your account below
-  </p>
+<div class="border-2 mt-36">
+  <div class= 'Welcome message mt-5'>
+    <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl macx-w-[1200px] mx-auto w-full text-center font-semibold">
+      Welcome Back! <span class="text-indigo-400 font-sans"></span>
+    </h2>
+    <p class="text-xl sm:text-2xl md:text-3xl text-center max-w-[1000px] mx-auto w-full">
+      Log into your account below
+    </p>
   </div>
 
   <div class='login-form'>
@@ -52,6 +53,7 @@
           <input type="password" bind:value={password} placeholder="Password" required />
           <button type="submit">Log In</button>
       </form>
+  </div>
 </div>
 
 <style>
