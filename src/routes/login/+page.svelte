@@ -1,4 +1,6 @@
 <script>
+  import Header from "../../components/Header.svelte";
+
   let email = "";
   let password = "";
 
@@ -32,22 +34,24 @@
   };
 </script>
 
-<div class= 'Welcome message'>
-<h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl macx-w-[1200px] mx-auto w-full text-center font-semibold mt-36">
-  Welcome Back! <span class="text-indigo-400 font-sans"></span>
-</h2>
-<p class="text-xl sm:text-2xl md:text-3xl text-center max-w-[1000px] mx-auto w-full">
-  Log into your account below
-</p>
-</div>
+<Header type='login'/>
 
-<div class='login-form'>
-    <h2>Log In </h2>
-    <form on:submit={handleSubmit}>
-        <input type="email" bind:value={email} placeholder="Email" required />
-        <input type="password" bind:value={password} placeholder="Password" required />
-        <button type="submit">Log In</button>
-    </form>
+<div class= 'Welcome message'>
+  <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl macx-w-[1200px] mx-auto w-full text-center font-semibold mt-36">
+    Welcome Back! <span class="text-indigo-400 font-sans"></span>
+  </h2>
+  <p class="text-xl sm:text-2xl md:text-3xl text-center max-w-[1000px] mx-auto w-full">
+    Log into your account below
+  </p>
+  </div>
+
+  <div class='login-form'>
+      <h2>Log In </h2>
+      <form on:submit={handleSubmit}>
+          <input type="email" bind:value={email} placeholder="Email" required />
+          <input type="password" bind:value={password} placeholder="Password" required />
+          <button type="submit">Log In</button>
+      </form>
 </div>
 
 <style>

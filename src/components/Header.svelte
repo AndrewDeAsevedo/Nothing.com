@@ -3,6 +3,7 @@
     import Sidebar from './Sidebar.svelte';
     let showSidebar = false;
     export let isLoggedIn = true;
+    export let type = ' ';
     const toggleSidebar = () => {
     showSidebar = !showSidebar;
   };
@@ -13,6 +14,7 @@
         <a href="/">
             <h1 class="text-indigo-400 font-bold text-3xl z-5">Olley<span class="text-blue-400">.com</span></h1>
         </a>
+        {#if type !== 'login'}
         <button on:click={toggleSidebar} class="md:hidden grid place-items-center">
             <i class="fa-solid fa-bars"></i>
         </button>
@@ -29,6 +31,8 @@
                         <p>Log In</p>
                     </button>
                 {/if}
+        </nav>
+        {/if}
     </div>
 
 </header>
