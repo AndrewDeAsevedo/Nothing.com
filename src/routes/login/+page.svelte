@@ -42,7 +42,7 @@
      <span class="text-blue-400 font-sans">Welcome Back!</span>
     </h2>
     <p class="text-xl sm:text-2xl md:text-3xl text-center max-w-[1000px] mx-auto w-full">
-      Log into your account below
+      <span class="text-purple-400"> Log into your account below </span>
     </p>
   </div>
 
@@ -53,6 +53,9 @@
           <input type="password" bind:value={password} placeholder="Password" required />
           <button type="submit">Log In</button>
       </form>
+      <redirect>
+        Forgot something? <a href="/register" style="color:blueviolet"> Click to reset password </a> 
+      </redirect>
   </div>
 </div>
 
