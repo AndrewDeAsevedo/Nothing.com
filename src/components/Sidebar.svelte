@@ -1,6 +1,7 @@
 <script>
     import { goto } from '$app/navigation';
     import { clearUser } from '$lib/userStore.js';
+    import { logout } from '../lib/pocketbase';
     export let showSidebar = false;
     export let isLoggedIn;
 </script>
@@ -14,17 +15,18 @@
       <a href="#reviews">Reviews</a>
       <button><a href="#FAQs">FAQs</a></button>
       {#if isLoggedIn}
-        <button on:click={() =>{ 
-          goto('/login');
-          console.log('logout button clicked');
-          clearUser();
-          console.log('')
-          }} class="logInButton mx-auto duration-200cursor-pointer">
-          <p>Log Out</p>
-        </button>
+          <button on:click={() =>{ 
+              goto('/login');
+              console.log('logout button clicked');
+              logout();
+              }} class="logInButton mx-auto duration-200cursor-pointer">
+              <p>Log Out</p>
+          </button>
       {:else if !isLoggedIn}
           <button class="logInButton mx-auto duration-200 cursor-pointer" 
-          on:click={() => goto('/login')}>
+          on:click={() => 
+              goto('/login')
+          }>
           <p>Log In</p>
           </button>
       {/if}

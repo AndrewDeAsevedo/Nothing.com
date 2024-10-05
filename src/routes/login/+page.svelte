@@ -9,8 +9,6 @@
   let password = "";
 
   onMount(async () => {
-    console.log(userStore);
-    console.log(pb.authStore.isValid); 
     if (pb.authStore.isValid) {
         console.log(pb.authStore.token); 
         console.log(pb.authStore.model.id); 
@@ -24,7 +22,7 @@
       try {
           login(email, password);
           console.log('Authentication successful');
-          setUser({ email, password });
+          setUser();
       } catch (error) {
           console.error('Authentication failed:', error);
       }

@@ -1,7 +1,7 @@
 <script>
     import { goto } from '$app/navigation';
     import Sidebar from './Sidebar.svelte';
-    import { clearUser, userStore } from '$lib/userStore.js';
+    import { logout } from '../lib/pocketbase';
     let showSidebar = false;
     export let isLoggedIn = true;
     export let type = '';
@@ -27,8 +27,7 @@
                     <button on:click={() =>{ 
                         goto('/login');
                         console.log('logout button clicked');
-                        clearUser();
-                        console.log('')
+                        logout();
                         }} class="logInButton mx-auto duration-200cursor-pointer">
                         <p>Log Out</p>
                     </button>
