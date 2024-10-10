@@ -18,6 +18,7 @@ export const setUser = (user) => {
 export const clearUser = () => {
     userStore.set({ 
         isAuthenticated: false, 
-        user: null 
+        user: null
     });
+    logout(); 
 };

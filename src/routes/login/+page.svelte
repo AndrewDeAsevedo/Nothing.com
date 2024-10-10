@@ -4,14 +4,18 @@
   import pb from '$lib/pocketbase.js';
   import { setUser, userStore } from '$lib/userStore.js';
   import { login } from '../../lib/pocketbase';
+  import { goto } from '$app/navigation';
 
   let email = "";
   let password = "";
 
   onMount(async () => {
+    console.log(pb.authStore.isValid); // pb.authStore.isValid
     if (pb.authStore.isValid) {
         console.log(pb.authStore.token); 
         console.log(pb.authStore.model.id); 
+        console.log(userStore.isAuthenticated); 
+
     }
   });
 
@@ -19,13 +23,10 @@
   const handleSubmit = async (event) => {
       event.preventDefault();
 
-      try {
-          login(email, password);
-          console.log('Authentication successful');
-          setUser();
-      } catch (error) {
-          console.error('Authentication failed:', error);
-      }
+        login(email, password);
+        setUser(email); 
+        goto('/');
+      
   };
 </script>
 

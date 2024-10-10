@@ -5,7 +5,8 @@
   let last_name = "";
   let username = "";
 
-    function handleSubmit(){
+    const handleSubmit = async (event ) => {
+        event.preventDefault();
         if (!email.includes('@')) {
             alert('Please enter a valid email address.');
             return;

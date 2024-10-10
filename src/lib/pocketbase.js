@@ -7,8 +7,12 @@ const pb = new PocketBase(PUBLIC_API_URL);
 
 // Utility function to log in
 export const login = async (email, password) => {
-    console.log('Login successful');
-    return await pb.collection('users').authWithPassword(email, password);
+    try {
+        await pb.collection('users').authWithPassword(email, password);
+    } catch (error) {
+        console.error('Login failed:', error);
+        return;
+    }
 };
 
 // Utility function to log out

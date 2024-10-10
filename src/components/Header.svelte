@@ -1,12 +1,15 @@
 <script>
     import { goto } from '$app/navigation';
     import Sidebar from './Sidebar.svelte';
-    import { logout } from '../lib/pocketbase';
+    import { clearUser, userStore } from '../lib/userStore.js';
     let showSidebar = false;
-    export let isLoggedIn = true;
+    export let isLoggedIn = userStore.isAuthenticated;
     export let type = '';
     const toggleSidebar = () => {
     showSidebar = !showSidebar;
+
+    console.log(isLoggedIn);
+
   };
 </script>
 
@@ -23,15 +26,15 @@
                 <a href="#About" class="duration-200 hover:text-indigo-400 cursor-pointer">About The Developers</a>
                 <a href="#Reviews" class="duration-200 hover:text-indigo-400 cursor-pointer">Reviews</a>
                 <a href="#FAQs" class="duration-200 hover:text-indigo-400 cursor-pointer">FAQs</a>
-                {#if isLoggedIn}
+                {#if isLoggedIn === true}
                     <button on:click={() =>{ 
                         goto('/login');
                         console.log('logout button clicked');
-                        logout();
-                        }} class="logInButton mx-auto duration-200cursor-pointer">
+                        clearUser();
+                        }} class="logInButton mx-auto duration-200curso``r-pointer">
                         <p>Log Out</p>
                     </button>
-                {:else if !isLoggedIn}
+                {:else if isLoggedIn === false}
                     <button class="logInButton mx-auto duration-200 cursor-pointer" 
                     on:click={() => 
                         goto('/login')
